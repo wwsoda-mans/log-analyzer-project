@@ -1,6 +1,7 @@
 from log_parser import parse_logs
 from analyzer import count_by_level, count_total_logs, get_top_messages, print_level_counts, print_logs
-from filters import filter_by_level, filter_by_date, filter_by_message_word
+from filters import filter_by_level, filter_by_date, filter_by_message_word, filter_by_message_word, filter_by_level, \
+    filter_errors, filter_by_date_range
 
 logs = parse_logs("logs.txt")
 
@@ -15,11 +16,11 @@ level_counts = count_by_level(logs)
 print_level_counts(level_counts)
 
 print("ERROR LOGS")
-error_logs = filter_by_level(logs, "ERROR")
+error_logs = filter_errors(logs)
 print_logs(error_logs)
 
-print("LOGS BY DATE")
-date_logs = filter_by_date(logs, "2026-05-18")
+print("DATE RANGE LOGS")
+date_logs = filter_by_date_range(logs, "2026-05-18", "2026-05-20")
 print_logs(date_logs)
 
 print("LOGS WITH WORD")
