@@ -5,6 +5,8 @@ def parse_logs(filename):
     file=open(filename, "r")
     for line in file:
         line=line.strip()
+        if line == "":
+            continue
         parts=line.split(" ")
         if len(parts)>3:
             date = parts[0]
