@@ -1,22 +1,26 @@
 from log_parser import parse_logs
 from filters import filter_errors
-
 from utils import print_title
 
-
 def test_parser():
-    logs = parse_logs("logs.txt")
+    print_title("PARSER TEST")
 
+    logs = parse_logs("logs.txt")
     if len(logs) > 0:
         print("parser test passed")
     else:
         print("parser test failed")
+
+
 def test_filter():
+    print_title("FILTER TEST")
     logs = parse_logs("logs.txt")
     errors = filter_errors(logs)
-    if isinstance(errors, list):
-        print("filtering test passed")
+    if len(errors) > 0:
+        print("filter test passed")
     else:
-        print("filtering test failed")
-test_filter()
+        print("filter test failed")
 test_parser()
+print()
+
+test_filter()
