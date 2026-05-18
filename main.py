@@ -1,7 +1,6 @@
 from log_parser import parse_logs
 from analyzer import count_by_level, count_total_logs, get_top_messages, print_level_counts, print_logs
-from filters import filter_by_level, filter_by_date, filter_by_message_word, filter_by_message_word, filter_by_level, \
-    filter_errors, filter_by_date_range
+from filters import filter_by_level, filter_by_date, filter_by_message_word, filter_by_message_word, filter_by_level, filter_errors, filter_by_date_range
 
 logs = parse_logs("logs.txt")
 
