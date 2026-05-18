@@ -12,6 +12,9 @@ def count_by_level(logs):
 def count_total_logs(logs):
     return len(logs)
 
+def get_message_count(item):
+    return item[1]
+
 def get_top_messages(logs, limit):
     message_counts = {}
 
@@ -22,7 +25,7 @@ def get_top_messages(logs, limit):
         else:
             message_counts[message] = 1
 
-    sorted_messages = sorted(message_counts.items(), key=lambda item: item[1], reverse=True)
+    sorted_messages = sorted(message_counts.items(), key=get_message_count, reverse=True)
 
     return sorted_messages[:limit]
 

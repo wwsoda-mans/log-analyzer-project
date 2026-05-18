@@ -38,4 +38,10 @@ def filter_by_message_word(logs, word):
     return filtered_logs
 
 def filter_errors(logs):
-    return [log for log in logs if "ERROR" in log]
+    filtered_logs = []
+
+    for log in logs:
+        if log.level == "ERROR":
+            filtered_logs.append(log)
+
+    return filtered_logs
