@@ -1,34 +1,41 @@
 def filter_by_level(logs, level):
-    result = []
+    filtered_logs = []
 
     for log in logs:
         if log.level == level:
-            result.append(log)
+            filtered_logs.append(log)
 
-    return result
+    return filtered_logs
 
 def filter_by_date(logs, date):
-    result = []
+    filtered_logs = []
 
     for log in logs:
         if log.date == date:
-            result.append(log)
+            filtered_logs.append(log)
 
-    return result
+    return filtered_logs
 
 def filter_by_date_range(logs, start_date, end_date):
-    result = []
-    for log in logs:
-        if log.date >= start_date and log.date <= end.date():
-            result.append(log)
+    filtered_logs = []
 
-    return result
+    for log in logs:
+        if start_date <= log.date <= end_date:
+            filtered_logs.append(log)
+
+    return filtered_logs
 
 def filter_by_message_word(logs, word):
-    result = []
+    filtered_logs = []
 
     for log in logs:
-        if word.lower() in log.message.lower():
-            result.append(log)
+        message = log.message.lower()
+        search_word = word.lower()
 
-    return result
+        if search_word in message:
+            filtered_logs.append(log)
+
+    return filtered_logs
+
+def filter_errors(logs):
+    return [log for log in logs if "ERROR" in log]
