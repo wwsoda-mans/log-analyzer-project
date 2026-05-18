@@ -5,4 +5,7 @@ def print_title(title):
 
 
 def format_log(log):
-    return f"[{log.leval}] {log.message}    "
+    text = "[" + log.level + "]"
+    text = text + log.message
+
+    return text
