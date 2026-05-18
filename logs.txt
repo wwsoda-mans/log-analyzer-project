@@ -2,3 +2,7 @@
 2026-05-18 ERROR Database failed
 2026-05-18 WARNING Memory high
 2026-05-18 INFO File uploaded
+2026-05-19 ERROR API timeout
+2026-05-19 WARNING CPU temperature high
+2026-05-20 INFO User logged out
+2026-05-20 ERROR Disk full
