@@ -16,6 +16,14 @@ def filter_by_date(logs, date):
 
     return result
 
+def filter_by_date_range(logs, start_date, end_date):
+    result = []
+    for log in logs:
+        if log.date >= start_date and log.date <= end.date():
+            result.append(log)
+
+    return result
+
 def filter_by_message_word(logs, word):
     result = []
 
