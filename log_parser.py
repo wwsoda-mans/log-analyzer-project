@@ -16,7 +16,7 @@ def parse_logs(filename):
             while i<len(parts):
                 message = message + parts[i]+""
                 i = i+1
-                log = log(date, level, message)
+                log = Log(date, level, message)
 
                 logs.append(log)
             file.close()
